@@ -43,6 +43,7 @@ class UserProfileViewSet(viewsets.ReadOnlyModelViewSet):
         username = self.kwargs[self.lookup_field]
         obj = self.get_queryset().get(user__username=username)
         self.check_object_permissions(self.request, obj)
+
         return obj
 
     def get_serializer_class(self):
@@ -53,6 +54,7 @@ class UserProfileViewSet(viewsets.ReadOnlyModelViewSet):
 
         # We're in a detail view, so decide based on permission.
         obj = self.get_object()
+
         if (
             obj.user != self.request.user
             and not obj.is_public
@@ -67,11 +69,14 @@ class UserProfileViewSet(viewsets.ReadOnlyModelViewSet):
     @action(detail=False, methods=["GET"], url_path="search", url_name="search")
     def search_users(self, request):
         username = request.query_params.get("username", None)
+
         if username:
             # Filter on the related User model's username field.
             users = UserProfile.objects.filter(user__username__icontains=username)
             serializer = self.get_serializer(users, many=True)
+
             return Response(serializer.data, status=status.HTTP_200_OK)
+
         return Response(
             {"error": "Username parameter is required"},
             status=status.HTTP_400_BAD_REQUEST,

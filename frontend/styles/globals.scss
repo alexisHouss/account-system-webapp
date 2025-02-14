@@ -1,0 +1,67 @@
+//Remix Icons
+@font-face {
+  font-family: "remixicon";
+  src: url("../public/assets/iconfonts/RemixIcons/fonts/remixicon.eot");
+  src: url("../public/assets/iconfonts/RemixIcons/fonts/remixicon.eot") format("embedded-opentype"),
+    url("../public/assets/iconfonts/RemixIcons/fonts/remixicon.woff2") format("woff2"),
+    url("../public/assets/iconfonts/RemixIcons/fonts/remixicon.woff") format("woff"),
+    url("../public/assets/iconfonts/RemixIcons/fonts/remixicon.ttf") format("truetype"),
+    url("../public/assets/iconfonts/RemixIcons/fonts/remixicon.svg") format("svg");
+  /* iOS 4.1- */
+  font-display: swap;
+}
+
+//Boxicons
+@font-face {
+  font-family: 'boxicons';
+  font-weight: normal;
+  font-style: normal;
+  src: url('../public/assets/iconfonts/boxicons/fonts/boxicons.eot');
+  src: url('../public/assets/iconfonts/boxicons/fonts/boxicons.eot') format('embedded-opentype'),
+    url('../public/assets/iconfonts/boxicons/fonts/boxicons.woff2') format('woff2'),
+    url('../public/assets/iconfonts/boxicons/fonts/boxicons.woff') format('woff'),
+    url('../public/assets/iconfonts/boxicons/fonts/boxicons.ttf') format('truetype'),
+    url('../public/assets/iconfonts/boxicons/fonts/boxicons.svg') format('svg');
+}
+
+//tabler-icons
+@font-face {
+  font-family: "tabler-icons";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../public/assets/iconfonts/tabler-icons/iconfont/fonts/tabler-icons.eot");
+  src: url("../public/assets/iconfonts/tabler-icons/iconfont/fonts/tabler-icons.eot?#iefix") format("embedded-opentype"),
+    url("../public/assets/iconfonts/tabler-icons/iconfont/fonts/tabler-icons.woff2") format("woff2"),
+    url("../public/assets/iconfonts/tabler-icons/iconfont/fonts/tabler-icons.woff") format("woff"),
+    url("../public/assets/iconfonts/tabler-icons/iconfont/fonts/tabler-icons.ttf") format("truetype"),
+    url("../public/assets/iconfonts/tabler-icons/iconfont/fonts/tabler-icons.svg") format("svg");
+}
+
+//bootstrap-Icons
+@font-face {
+  font-family: "bootstrap-icons";
+  src: url("../public/assets/iconfonts/bootstrap-icons/icons/font/fonts/bootstrap-icons.woff2?08efbba7c53d8c5413793eecb19b20bb") format("woff2"),
+    url("../public/assets/iconfonts/bootstrap-icons/icons/font/fonts/bootstrap-icons.woff?08efbba7c53d8c5413793eecb19b20bb") format("woff");
+}
+
+//feather-icons
+@font-face {
+  font-family: "feather";
+  src: url("../public/assets/iconfonts/feather/fonts/feather/feather-webfont.eot?t=1501841394106");
+  src: url("../public/assets/iconfonts/feather/fonts/feather/feather-webfont.eot?t=1501841394106") format("embedded-opentype"),
+    url("../public/assets/iconfonts/feather/fonts/feather/feather-webfont.ttf") format("truetype"),
+    url("../public/assets/iconfonts/feather/fonts/feather/feather-webfont.svg") format("svg");
+}
+
+@import "../public/assets/iconfonts/RemixIcons/fonts/remixicon.css";
+@import "../public/assets/iconfonts/boxicons/css/boxicons.css";
+@import "../public/assets/iconfonts/tabler-icons/iconfont/tabler-icons.css";
+@import "../public/assets/iconfonts/bootstrap-icons/icons/font/bootstrap-icons.css";
+@import "../public/assets/iconfonts/feather/feather.css";
+@import "../public/assets/iconfonts/line-awesome/1.3.0/scss/line-awesome.scss";
+
+@import "../public/assets/css/style.css";
+
+@import "@simonwep/pickr/dist/themes/classic.min.css";
+@import "@simonwep/pickr/dist/themes/monolith.min.css";
+@import "@simonwep/pickr/dist/themes/nano.min.css";

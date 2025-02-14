@@ -1,4 +1,6 @@
 from django.contrib.auth import get_user_model
+from django.shortcuts import get_object_or_404
+
 from rest_framework import viewsets, status
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
@@ -6,6 +8,7 @@ from rest_framework.decorators import action
 
 from ..models.following import Following
 from ..serializers.following_serializer import FollowingSerializer
+
 
 User = get_user_model()
 
@@ -23,8 +26,21 @@ class FollowingViewSet(viewsets.ModelViewSet):
         # For the 'unfollow' action (and default list), allow the follower to access.
         return Following.objects.filter(followee=self.request.user)
 
+    def get_object(self):
+        # Customize lookup for the 'unfollow' action:
+
+        if self.action == "unfollow":
+            # Use self.kwargs.get("pk") as the target user's id
+            return get_object_or_404(
+                Following, followee=self.request.user, following=self.kwargs.get("pk")
+            )
+
+        # For other actions, use the default behavior.
+        return super().get_object()
+
     def create(self, request, *args, **kwargs):
         following_user_id = request.data.get("following")
+        print(following_user_id)
 
         if not following_user_id:
             return Response(

@@ -19,12 +19,16 @@ class UserSerializer(serializers.ModelSerializer):
 class UserProfileSerializer(serializers.ModelSerializer):
     number_of_followers = serializers.ReadOnlyField()
     number_of_followees = serializers.ReadOnlyField()
+    first_name = serializers.ReadOnlyField(source="user.first_name")
+    last_name = serializers.ReadOnlyField(source="user.last_name")
 
     class Meta:
         model = UserProfile
         fields = (
             "id",
             "user",
+            "first_name",
+            "last_name",
             "username",
             "bio",
             "is_public",
